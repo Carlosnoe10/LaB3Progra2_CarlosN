@@ -1,6 +1,7 @@
 package lab3progr2_carlosnoé;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class Lab3Progr2_CarlosNoé {
@@ -39,6 +40,7 @@ public class Lab3Progr2_CarlosNoé {
                             break;
 
                         case 6:
+                            ListarVehi(ListaV);
                             break;
 
                         case 7:
@@ -66,7 +68,11 @@ public class Lab3Progr2_CarlosNoé {
         System.out.println("Fin");
     }
     public static void ListarVehi(ArrayList<Vehiculos> ListaV){
-        
+        for (Iterator<Vehiculos> iterator = ListaV.iterator(); iterator.hasNext();) {
+            
+            Vehiculos next = iterator.next();
+            System.out.println(next);
+        }
         
     }
 }
