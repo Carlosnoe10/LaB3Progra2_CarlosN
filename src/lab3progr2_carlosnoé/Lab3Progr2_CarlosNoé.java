@@ -37,6 +37,8 @@ public class Lab3Progr2_CarlosNoé {
                             String Placa = k1ng.nextLine();
                             System.out.println("Ingrese la Marca");
                             String Marca = k1ng.nextLine();
+                            System.out.println("Ingrese la Modelo");
+                            String Modelo = k1ng.nextLine();
                             System.out.println("Ingrese el tipo 'T'= Turism, 'C'=Camioneta, etc");
                             char Type = k1ng.next().charAt(0);
                             JColorChooser colorChooser = new JColorChooser();
@@ -60,7 +62,7 @@ public class Lab3Progr2_CarlosNoé {
                             System.out.println("Ingrese el numero de puertas: ");
                             int NumAsientos = k1ng.nextInt();
 
-                            Automovil Movil = new Automovil(Cumbustible, Trans, NumPuertas, NumAsientos, Placa, Marca, Type, color, fecha);
+                            Automovil Movil = new Automovil(Cumbustible, Trans, NumPuertas, NumAsientos, Placa, Marca,Modelo, Type, color, fecha);
                             ListaV.add(Movil);
                             break;
                         case 2:
@@ -69,6 +71,8 @@ public class Lab3Progr2_CarlosNoé {
                             String Placa3 = k1ng.nextLine();
                             System.out.println("Ingrese la Marca");
                             String Marca3 = k1ng.nextLine();
+                            System.out.println("Ingrese la Modelo");
+                            String Modelo1 = k1ng.nextLine();
                             System.out.println("Ingrese el tipo 'T'= Turism, 'C'=Camioneta, etc");
                             char Type3 = k1ng.next().charAt(0);
                             JColorChooser colorChooser3 = new JColorChooser();
@@ -90,7 +94,7 @@ public class Lab3Progr2_CarlosNoé {
                             System.out.println("Ingrese el Consumo");
                             double consumo = k1ng.nextDouble();
 
-                            Moto mum = new Moto(lim, peso, consumo, Placa3, Marca3, Type3, color3, fecha3);
+                            Moto mum = new Moto(lim, peso, consumo, Placa3, Modelo1,Marca3, Type3, color3, fecha3);
                             ListaV.add(mum);
                             break;
                         case 3:
@@ -98,6 +102,8 @@ public class Lab3Progr2_CarlosNoé {
                             String Placa1 = k1ng.nextLine();
                             System.out.println("Ingrese la Marca");
                             String Marca1 = k1ng.nextLine();
+                            System.out.println("Ingrese la Modelo");
+                            String Modelo2 = k1ng.nextLine();
                             System.out.println("Ingrese el tipo 'T'= Turism, 'C'=Camioneta, etc");
                             char Type1 = k1ng.next().charAt(0);
                             JColorChooser colorChooser1 = new JColorChooser();
@@ -119,10 +125,24 @@ public class Lab3Progr2_CarlosNoé {
                             System.out.println("Ingrese el Consumo");
                             double consumo1 = k1ng.nextDouble();
 
-                            Buses bus = new Buses(pass, NumEJE, consumo1, Placa1, Marca1, Type1, color1, fecha1);
+                            Buses bus = new Buses(pass, NumEJE, consumo1, Placa1,Modelo2, Marca1, Type1, color1, fecha1);
                             ListaV.add(bus);
                             break;
                         case 4:
+                            for (int i = 0; i < ListaV.size(); i++) {
+                                System.out.println(i + ListaV.get(i).toString());
+                            }
+                            System.out.println("Ingrese el numero del carro que desea Pagar");
+                            int numero3 = k1ng.nextInt();
+
+                            if (ListaV.get(numero3) instanceof Automovil) {
+                                Xpagar = 275 + 250 + 1200;
+                            } else if (ListaV.get(numero3) instanceof Moto) {
+                                Xpagar = 275 + 250 + 200;
+                            } else {
+                                Xpagar = 275 + 250 + 1000;
+                            }
+
                             break;
 
                         case 5:
@@ -142,20 +162,19 @@ public class Lab3Progr2_CarlosNoé {
                             for (int i = 0; i < ListaV.size(); i++) {
                                 System.out.println(i + ListaV.get(i).toString());
                             }
-                            System.out.println("Ingrese el numero del carro que desea eliminar");
+                            System.out.println("Ingrese el numero del carro que desea Pagar");
                             int numero2 = k1ng.nextInt();
                             int Xpagar = 0;
                             if (ListaV.get(numero2) instanceof Automovil) {
-                                Xpagar=275+250+1200;
-                            }else if (ListaV.get(numero2)instanceof Moto) {
-                                Xpagar=275+250+200;
-                            }else{
-                                Xpagar=275+250+1000;
-                            }  
-                            System.out.println("Es su total a pagar"+Xpagar);
-                            
-                            break;
+                                Xpagar = 275 + 250 + 1200;
+                            } else if (ListaV.get(numero2) instanceof Moto) {
+                                Xpagar = 275 + 250 + 200;
+                            } else {
+                                Xpagar = 275 + 250 + 1000;
+                            }
+                            System.out.println("Es su total a pagar" + Xpagar);
 
+                            break;
 
                     }// switch menu p
                     System.out.println("Bienvenid al menu \n"
@@ -179,39 +198,67 @@ public class Lab3Progr2_CarlosNoé {
         System.out.println("Fin");
     }
 
-    public static ArrayList<Vehiculos> AgregarAutomovil(ArrayList<Vehiculos> ListaV) throws ParseException {
+
+
+    public static void MenuCambio(ArrayList<Vehiculos> ListaV, int num) {
         Scanner k1ng = new Scanner(System.in);
-        System.out.println("Ingrese el numero de placa");
-        String Placa = k1ng.nextLine();
-        System.out.println("Ingrese la Marca");
-        String Marca = k1ng.nextLine();
-        System.out.println("Ingrese el tipo 'T'= Turism, 'C'=Camioneta, etc");
-        char Type = k1ng.next().charAt(0);
-        JColorChooser colorChooser = new JColorChooser();
-        Color color = colorChooser.getColor();
-        System.out.println("Ingrese el dia de nacimiento: ");
-        String dia = k1ng.nextLine();
-        System.out.println("Ingrese el mes de nacimiento: ");
-        String mes = k1ng.nextLine();
-        System.out.println("Ingrese el año de nacimiento");
-        String ano = k1ng.nextLine();
-        String entrada = dia + "/" + mes + "/" + ano;
-        DateFormat format = new SimpleDateFormat("DD/MM/YYYY");
-        Date fecha = format.parse(entrada);
+        System.out.println("Bienvenid al menu \n"
+                + "1. MOD Placa \n"
+                + "2. MOD Marca \n"
+                + "3. MOD Modelo \n"
+                + "4. MOD Tipo\n"
+                + "5. MOD Color\n"
+                + "6. MOD Anio \n"
+                + "7. Otro");
+        int menu = k1ng.nextInt();
+        for (int x = 0; x < 1; x++) {
+            while (menu != 7) {
+                if ((menu > 0) && (menu < 8)) { // 4 es igual al numero limite que deseo agregar
+                    x++;
+                    switch (menu) {
+                        case 1:
+                            System.out.println("Ingrese su nueva Placa");
+                            String Placa1 = k1ng.nextLine();
+                            ListaV.get(num).setNumeroPlaca(Placa1);
+                            break;
+                        case 2:
+                            System.out.println("Ingrese su nuevo Marca");
+                            String Marca = k1ng.nextLine();
+                            ListaV.get(num).setMarca(Marca);
+                            break;
+                        case 3:
+                            System.out.println("Ingrese su Nuevo modelo");
+                            String Modelo = k1ng.nextLine();
+                            ListaV.get(num).setModelo(Modelo);
+                            break;
+                        case 4:
+                            System.out.println("Ingrese el nuevo tipo");
+                            char Type1 = k1ng.next().charAt(0);
+                            ListaV.get(num).getTipo(Type1);
+                            break;
+                        case 7:
 
-        System.out.println("Ingrese el tipo de combustible del AutoMovil");
-        String Cumbustible = k1ng.nextLine();
-        System.out.println("Ingrese el numero de puertas: ");
-        int NumPuertas = k1ng.nextInt();
-        System.out.println("Ingrese el tipo de transmicion: ");
-        String Trans = k1ng.nextLine();
-        System.out.println("Ingrese el numero de puertas: ");
-        int NumAsientos = k1ng.nextInt();
+                            break;
+                        case 6:
 
-        Automovil Movil = new Automovil(Cumbustible, Trans, NumPuertas, NumAsientos, Placa, Marca, Type, color, fecha);
-        ListaV.add(Movil);
-        return ListaV;
+                            break;
+                    }// switch menu p
+                    System.out.println("Bienvenid al menu \n"
+                            + "1. CRUD Concecionaria \n"
+                            + "2. CRUD Clientes \n"
+                            + "3. CRUD Vehiculos \n"
+                            + "4. Compra y venta de vehiculos\n"
+                            + "5. Salida");
+                    menu = k1ng.nextInt();
 
+                } else {
+                    System.out.println("Ingrese adecuadamente el numero");
+                    x--;
+                }//if
+            }//while
+        }//for
+
+        System.out.println("Fin");
     }
 
     public static void ListarVehi(ArrayList<Vehiculos> ListaV) {

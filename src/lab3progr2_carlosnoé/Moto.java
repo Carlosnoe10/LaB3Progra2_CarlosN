@@ -14,11 +14,19 @@ public class Moto extends Vehiculos{
         this.ConsumoDCumbus = ConsumoDCumbus;
     }
 
-    public Moto(double LimVeloz, double Peso, double ConsumoDCumbus, String NumeroPlaca, String Modelo, char Tipo, Color color, Date Anio) {
-        super(NumeroPlaca, Modelo, Tipo, color, Anio);
+    public Moto(double LimVeloz, double Peso, double ConsumoDCumbus, String NumeroPlaca, String Modelo, String Marca, char Tipo, Color color, Date Anio) {
+        super(NumeroPlaca, Modelo, Marca, Tipo, color, Anio);
         this.LimVeloz = LimVeloz;
         this.Peso = Peso;
         this.ConsumoDCumbus = ConsumoDCumbus;
+    }
+
+    public String getMarca() {
+        return Marca;
+    }
+
+    public void setMarca(String Marca) {
+        this.Marca = Marca;
     }
 
     public double getLimVeloz() {
@@ -61,7 +69,7 @@ public class Moto extends Vehiculos{
         this.Modelo = Modelo;
     }
 
-    public char getTipo() {
+    public char getTipo(char Type1) {
         return Tipo;
     }
 

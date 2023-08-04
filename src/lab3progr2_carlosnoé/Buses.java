@@ -14,13 +14,21 @@ public class Buses extends Vehiculos{
         this.Longitud = Longitud;
     }
 
-    public Buses(int CapacidadPassa, int NumeroEjes, double Longitud, String NumeroPlaca, String Modelo, char Tipo, Color color, Date Anio) {
-        super(NumeroPlaca, Modelo, Tipo, color, Anio);
+    public Buses(int CapacidadPassa, int NumeroEjes, double Longitud, String NumeroPlaca, String Modelo, String Marca, char Tipo, Color color, Date Anio) {
+        super(NumeroPlaca, Modelo, Marca, Tipo, color, Anio);
         this.CapacidadPassa = CapacidadPassa;
         this.NumeroEjes = NumeroEjes;
         this.Longitud = Longitud;
     }
 
+    
+    public String getMarca() {
+        return Marca;
+    }
+
+    public void setMarca(String Marca) {
+        this.Marca = Marca;
+    }
     public int getCapacidadPassa() {
         return CapacidadPassa;
     }
@@ -61,7 +69,7 @@ public class Buses extends Vehiculos{
         this.Modelo = Modelo;
     }
 
-    public char getTipo() {
+    public char getTipo(char Type1) {
         return Tipo;
     }
 

@@ -7,6 +7,7 @@ public class Vehiculos {
 
     public String NumeroPlaca;
     public String Modelo;
+    public String Marca;
     public char Tipo;
     public Color color;
     public Date Anio;
@@ -14,13 +15,16 @@ public class Vehiculos {
     public Vehiculos() {
     }
 
-    public Vehiculos(String NumeroPlaca, String Modelo, char Tipo, Color color, Date Anio) {
+    public Vehiculos(String NumeroPlaca, String Modelo, String Marca, char Tipo, Color color, Date Anio) {
         this.NumeroPlaca = NumeroPlaca;
         this.Modelo = Modelo;
+        this.Marca = Marca;
         this.Tipo = Tipo;
         this.color = color;
         this.Anio = Anio;
     }
+
+
 
     public String getNumeroPlaca() {
         return NumeroPlaca;
@@ -38,7 +42,7 @@ public class Vehiculos {
         this.Modelo = Modelo;
     }
 
-    public char getTipo() {
+    public char getTipo(char Type1) {
         return Tipo;
     }
 
@@ -60,6 +64,14 @@ public class Vehiculos {
 
     public void setAnio(Date Anio) {
         this.Anio = Anio;
+    }
+
+    public String getMarca() {
+        return Marca;
+    }
+
+    public void setMarca(String Marca) {
+        this.Marca = Marca;
     }
 
     @Override

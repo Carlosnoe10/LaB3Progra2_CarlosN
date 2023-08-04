@@ -16,13 +16,23 @@ public class Automovil extends Vehiculos{
         this.NumeroDeAsientos = NumeroDeAsientos;
     }
 
-    public Automovil(String TipoCombu, String TipoTrans, int NumeroDePuertas, int NumeroDeAsientos, String NumeroPlaca, String Modelo, char Tipo, Color color, Date Anio) {
-        super(NumeroPlaca, Modelo, Tipo, color, Anio);
+    public Automovil(String TipoCombu, String TipoTrans, int NumeroDePuertas, int NumeroDeAsientos, String NumeroPlaca, String Modelo, String Marca, char Tipo, Color color, Date Anio) {
+        super(NumeroPlaca, Modelo, Marca, Tipo, color, Anio);
         this.TipoCombu = TipoCombu;
         this.TipoTrans = TipoTrans;
         this.NumeroDePuertas = NumeroDePuertas;
         this.NumeroDeAsientos = NumeroDeAsientos;
     }
+
+    public String getMarca() {
+        return Marca;
+    }
+
+    public void setMarca(String Marca) {
+        this.Marca = Marca;
+    }
+
+
 
     public String getTipoCombu() {
         return TipoCombu;
@@ -75,7 +85,7 @@ public class Automovil extends Vehiculos{
         this.Modelo = Modelo;
     }
 
-    public char getTipo() {
+    public char getTipo(char Type1) {
         return Tipo;
     }
 
