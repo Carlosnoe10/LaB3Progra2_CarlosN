@@ -4,12 +4,15 @@ import java.awt.Color;
 import java.util.Date;
 
 public class Vehiculos {
-    
+
     public String NumeroPlaca;
     public String Modelo;
     public char Tipo;
     public Color color;
     public Date Anio;
+
+    public Vehiculos() {
+    }
 
     public Vehiculos(String NumeroPlaca, String Modelo, char Tipo, Color color, Date Anio) {
         this.NumeroPlaca = NumeroPlaca;
@@ -63,6 +66,5 @@ public class Vehiculos {
     public String toString() {
         return "Vehiculos{" + "NumeroPlaca=" + NumeroPlaca + ", Modelo=" + Modelo + ", Tipo=" + Tipo + ", color=" + color + ", Anio=" + Anio + '}';
     }
-    
-    
+
 }
