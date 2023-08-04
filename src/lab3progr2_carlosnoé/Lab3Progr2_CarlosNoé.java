@@ -32,7 +32,7 @@ public class Lab3Progr2_CarlosNoé {
                     x++;
                     switch (menu) {
                         case 1:
-                            
+
                             System.out.println("Ingrese el numero de placa");
                             String Placa = k1ng.nextLine();
                             System.out.println("Ingrese la Marca");
@@ -126,6 +126,12 @@ public class Lab3Progr2_CarlosNoé {
                             break;
 
                         case 5:
+                            for (int i = 0; i < ListaV.size(); i++) {
+                                System.out.println(i + ListaV.get(i).toString());
+                            }
+                            System.out.println("Ingrese el numero del carro que desea eliminar");
+                            int numero = k1ng.nextInt();
+                            ListaV.remove(numero);
                             break;
 
                         case 6:
@@ -133,7 +139,23 @@ public class Lab3Progr2_CarlosNoé {
                             break;
 
                         case 7:
+                            for (int i = 0; i < ListaV.size(); i++) {
+                                System.out.println(i + ListaV.get(i).toString());
+                            }
+                            System.out.println("Ingrese el numero del carro que desea eliminar");
+                            int numero2 = k1ng.nextInt();
+                            int Xpagar = 0;
+                            if (ListaV.get(numero2) instanceof Automovil) {
+                                Xpagar=275+250+1200;
+                            }else if (ListaV.get(numero2)instanceof Moto) {
+                                Xpagar=275+250+200;
+                            }else{
+                                Xpagar=275+250+1000;
+                            }  
+                            System.out.println("Es su total a pagar"+Xpagar);
+                            
                             break;
+
 
                     }// switch menu p
                     System.out.println("Bienvenid al menu \n"
@@ -212,4 +234,5 @@ public class Lab3Progr2_CarlosNoé {
             }
         }
     }
+
 }
